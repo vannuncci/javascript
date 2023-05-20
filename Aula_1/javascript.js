@@ -1,0 +1,1 @@
+alert("Esse alerta vem do arquivo javascript.js");
