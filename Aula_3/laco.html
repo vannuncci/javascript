@@ -5,15 +5,16 @@
         <title>Aula 01</title>
     </header>
     <body> 
-            <button onclick="Laco()">Minha primeira Função</button>
-            <button onclick="LacoWhile()">Minha segunda Função</button>
-
+            <button onclick="Laco()">Minha primeira Função <br> <strong>Laco</strong></button> 
+            <button onclick="LacoWhile()">Minha primeira Função <br> <strong>Laco While</strong></button>
+            <button onclick="LacoDoWhile()">Minha primeira Função <br> <strong>Laco Do While</strong></button>
+            <button onclick="LacoFor()">Minha primeira Função <br> <strong>Laco For</strong></button>
         <br> 
     </body>
 
     <script>
         function Laco(){
-            alert("Alert Laço");
+            console.log("Alert Laço");
         }
         
         function LacoWhile(){
@@ -21,6 +22,20 @@
             while(contador < 5) {
                 console.log("Alert While - Contador: " + contador);
                 contador++;}
+        }
+
+        function LacoDoWhile(){
+            var contador = 0
+            do{
+                console.log("Alert Do While - Contador: " + contador);
+                contador++;
+            }while(contador < 5);
+        }
+
+        function LacoFor(){
+            for(var contador = 0; contador < 5; contador++){
+                console.log("Alert For - Contador: " + contador);
+            }
         }
 
     </script>
