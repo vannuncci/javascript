@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentos</title>
+    <h1> Pedra/Papel/Tesoura</h1>
+</head>
+<body>
+ 
+<select id="jokenpo">
+    <option value="pedra">Pedra</option>
+    <option value="papel">Papel</option>
+    <option value="tesoura">Tesoura</option>
+</select>   
+<button onclick="jogar()">Jogar</button>
+<br>
+<!-- <button onclick="jogar_ai()">Jogar pela <br> AI</button> -->
+
+<br>  
+<div id="minha_jogada"> </div> 
+ x 
+ <div id="maquina_jogada"> </div>  
+ 
+ <div id="resultado"> </div>
+</body>
+<script>
+
+    function jogar() {
+         
+        //Definição da jogada do usuário
+        jogada = document.getElementById("jokenpo").value;
+
+        //Exibição da jogada do usuário
+        img = document.createElement("img");
+        img.src = "img/" + jogada + ".png";
+        img.alt = jogada;  
+
+        //Cria o elemento img e adiciona a imagem do usuário
+        minha_jogada = document.getElementById("minha_jogada");
+        minha_jogada.innerHTML = "";
+        minha_jogada.appendChild(img);
+
+        //Definição da jogada da máquina
+        maquina_jogada = Math.floor(Math.random() * 3);
+        var opcoes = ["pedra", "papel", "tesoura"];
+        var escolhaMaquina = opcoes[maquina_jogada]; 
+         
+        //Exibição da jogada da máquina
+        img_maquina = document.createElement("img");
+        img_maquina.src = "img/" + escolhaMaquina + ".png";
+        img_maquina.alt = escolhaMaquina;  
+ 
+        //Cria o elemento img e adiciona a imagem da máquina
+        maquina_jogada = document.getElementById("maquina_jogada");   
+        maquina_jogada.innerHTML = "";
+        maquina_jogada.appendChild(img_maquina);
+
+        //Verificação do resultado
+        if (jogada == "pedra" && escolhaMaquina == "tesoura") {
+            resultado = "Você ganhou!";
+        } else if (jogada == "papel" && escolhaMaquina == "pedra") {
+            resultado = "Você ganhou!";
+        } else if (jogada == "tesoura" && escolhaMaquina == "papel") {
+            resultado = "Você ganhou!";
+        } else if (jogada == escolhaMaquina) {
+            resultado = "Empate!";
+        } else {
+            resultado = "Você perdeu!";
+        }
+ 
+        //Exibição do resultado
+        mensagem = document.getElementById("resultado");
+        mensagem.innerHTML = ("Você escolheu " + jogada + " e o computador escolheu " + escolhaMaquina + ". " + resultado);
+
+        // alert("Você escolheu " + jogada + " e o computador escolheu " + escolhaMaquina + ". " + resultado);
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function jogar_ai() {
+        var jokenpo = document.getElementById("jokenpo").value;
+        var computador = Math.floor(Math.random() * 3);
+        var opcoes = ["pedra", "papel", "tesoura"];
+        var escolhaComputador = opcoes[computador];
+        var resultado = "";
+
+        if (jokenpo == "pedra" && escolhaComputador == "tesoura") {
+            resultado = "Você ganhou!";
+        } else if (jokenpo == "papel" && escolhaComputador == "pedra") {
+            resultado = "Você ganhou!";
+        } else if (jokenpo == "tesoura" && escolhaComputador == "papel") {
+            resultado = "Você ganhou!";
+        } else if (jokenpo == escolhaComputador) {
+            resultado = "Empate!";
+        } else {
+            resultado = "Você perdeu!";
+        }
+
+        alert("Você escolheu " + jokenpo + " e o computador escolheu " + escolhaComputador + ". " + resultado);
+    }
+
+</script>
+</html>
