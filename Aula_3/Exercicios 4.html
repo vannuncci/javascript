@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 3 - Exercício 4</title>
+    <h1> Aula 3 - Exercício 4</h1>
+</head>
+<body>
+<!--  Escreva um programa que calcule a média de um array de números. -->
+    <button onclick="maior()">Qual a média entre o array?</button>  
+    <br>
+    <br>
+    <div id="mensagem"> </div>
+</body>
+
+</html>
+
+<script>
+
+         
+    // Escreva um programa que calcule a média de um array de números.
+    function maior(){
+        
+        var numeros = prompt("Digite os números separados por vírgula: "); 
+ 
+        numeros = numeros.split(",");
+        var soma = 0;
+
+        for(var i = 0; i < numeros.length; i++){
+            soma += parseInt(numeros[i]);
+        }
+        
+        resultado = soma / numeros.length;
+
+        //Exibição do resultado
+        mensagem = document.getElementById("mensagem");
+        mensagem.innerHTML  = (  'O média é ' +  resultado);
+
+    } 
+
+</script>

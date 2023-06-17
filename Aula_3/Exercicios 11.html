@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 3 - Exercício 11</title>
+    <h1> Aula 3 - Exercício 11</h1>
+</head>
+<body>
+<!-- Crie uma função que receba um valor e retorne a soma dos números pares.
+ -->
+    <label for="numero1">Soma numeros pares de 0 (zero) até:  </label>
+    <input type="numero1" id="numero1" name="numero1">
+
+    <button onclick="soma_pares()">Resultado </button>  
+    <br>
+    <br>
+    <div id="mensagem"> </div>
+</body>
+
+</html>
+
+<script>
+
+         
+    // Crie uma função que receba um valor e retorne a soma dos números pares.
+
+    function soma_pares(){
+       
+        var numero1 = document.getElementById("numero1").value;
+        numero1 = parseInt(numero1);
+
+        var resultado = 0;
+        
+        if (isNaN(numero1)){
+            msg = "Digite um número válido";
+        }else if (numero1 > 0){
+            for (let i = 0; i <= numero1; i++) {
+                if (i % 2 == 0) {
+                    resultado += i;
+                    msg =' A soma dos números pares entre 0 e '+ numero1 + ' é  <strong>' + resultado + '</strong>';
+                }
+            } 
+        }else {
+            msg = "Digite um número maior que 0 (zero)";
+        }
+
+        //Exibição do resultado
+        mensagem = document.getElementById("mensagem");
+        mensagem.innerHTML  = (  msg );
+
+    } 
+
+</script>

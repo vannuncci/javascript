@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 3 - Exercício 1</title>
+    <h1> Aula 3 - Exercício 1</h1>
+</head>
+<body>
+<!-- Crie uma função que receba dois números como parâmetros e retorne a soma deles. -->
+    <button onclick="soma()">Verifique a soma dos números</button>  
+    <br>
+    <br>
+    <div id="mensagem"> </div>
+</body>
+
+</html>
+
+<script>
+
+         
+    //Crie uma função que receba dois números como parâmetros e retorne a soma deles
+    function soma(){
+        
+        var numero = prompt("Digite o numero: ");
+        var numero2 = prompt("Digite o Numero 2: ")
+
+        numero = parseInt(numero);
+        numero2 = parseInt(numero2);
+
+        resultado = numero + numero2;
+
+        //Exibição do resultado
+        mensagem = document.getElementById("mensagem");
+        mensagem.innerHTML  = (  numero + ' + ' + numero2 + ' = ' +  resultado);
+
+    } 
+
+</script>

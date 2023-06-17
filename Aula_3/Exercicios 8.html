@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 3 - Exercício 8</title>
+    <h1> Aula 3 - Exercício 8</h1>
+</head>
+<body>
+<!--  Crie uma função recursiva para calcular a posição que o usuário escolher da sequência de Fibonacci -->
+    <label for="numero1">Posição do fibonate na posição: </label>
+    <input type="numero1" id="numero1" name="numero1">
+
+    <button onclick="fibonate()">Fibonate de </button>  
+    <br>
+    <br>
+    <div id="mensagem"> </div>
+</body>
+
+</html>
+
+<script>
+
+         
+    // Crie uma função recursiva para calcular a posição que o usuário escolher da sequência de Fibonacci
+    function fibonate(){
+       
+        var numero1 = document.getElementById("numero1").value;
+        ultimo = 1;
+        penultimo = 0;
+        //sequencia de fibonate
+        if (numero1 == 1){
+            resultado = 0;
+        }else if(numero1 == 2){
+            resultado = 1;
+        }else if(numero1 > 2) {
+            for(var i = 0; i < numero1 -2 ; i++){ 
+                numero = ultimo + penultimo;
+                penultimo = ultimo;
+                ultimo = numero;
+                var resultado = ultimo;
+            }
+        }else {
+            resultado = "Numero invalido";
+        }
+
+        //Exibição do resultado
+        mensagem = document.getElementById("mensagem");
+        mensagem.innerHTML  = ( resultado );
+
+    } 
+
+</script>

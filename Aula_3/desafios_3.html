@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 3 - Desafio 3</title>
+    <h1> Aula 3 - Desafio 3</h1>
+</head>
+<body>
+<!-- Verificar se um número é divisível por 3 e 5 ao mesmo tempo. -->
+    <button onclick="tres_ou_cinco()">Verifique se o número é <br> divisível por <strong>3</strong> ou <strong>5</strong> ao mesmo tempo.</button>  
+    <br>
+    <br>
+    <div id="mensagem"> </div>
+</body>
+
+</html>
+
+<script>
+
+         
+    //criar funcao de tabuada do numero digitado
+    function tres_ou_cinco(){
+        
+        var numero = prompt("Digite um número: ");
+        
+        if(numero % 3 == 0 && numero % 5 == 0){
+            resultado = ('O número ' + numero + ' é divisível por 3 e 5 ao mesmo tempo');
+        } else {
+                resultado = ('O número ' + numero + ' não é divisível por 3 e 5 ao mesmo tempo');
+        }
+
+        //Exibição do resultado
+        mensagem = document.getElementById("mensagem");
+        mensagem.innerHTML  = (resultado);
+
+    } 
+
+</script>

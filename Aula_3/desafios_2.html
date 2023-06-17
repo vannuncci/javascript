@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 3 - Desafio 2</title>
+    <h1> Aula 3 - Desafio 2</h1>
+</head>
+<body>
+<!-- Verificar se um número é par ou ímpar. -->
+    <button onclick="par_ou_impar()">Verifique se o número é <strong>Par</strong> ou <strong>Ímpar</strong></button>  
+    <br>
+    <br>
+    <div id="mensagem"> </div>
+</body>
+
+</html>
+
+<script>
+
+         
+    //criar funcao de tabuada do numero digitado
+    function par_ou_impar(){
+        
+        var numero = prompt("Digite um número: ");
+        
+        if(numero % 2 == 0){
+            resultado = ('O número ' + numero + ' é par');
+        }else{
+            resultado = ('O número ' + numero + ' é ímpar');
+        } 
+
+        //Exibição do resultado
+        mensagem = document.getElementById("mensagem");
+        mensagem.innerHTML  = (resultado);
+
+    } 
+
+</script>

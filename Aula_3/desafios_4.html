@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 3 - Desafio 4</title>
+    <h1> Aula 3 - Desafio 4</h1>
+</head>
+<body>
+<!-- Verificar se uma pessoa é maior de idade (idade mínima de 18 anos) e possui carteira de motorista -->
+    <button onclick="maior_e_motorista()"> Verificar se uma pessoa é maior de idade <br>(>= 18 anos) <strong>3</strong> e <strong>possui carteira de motorista</strong>.</button>  
+    <br>
+    <br>
+    <div id="mensagem"> </div>
+</body>
+
+</html>
+
+<script>
+
+         
+    //criar funcao de tabuada do numero digitado
+    function maior_e_motorista(){
+        
+        var numero = prompt("Digite um número: ");
+        var carteira = prompt("Possui carteira de motorista? (S/N)");
+   
+        if(numero >= 18 && carteira == "S"){
+            resultado = ('A pessoa é maior de idade e possui carteira de motorista');
+        }else if(numero >= 18 && carteira == "N"){
+            resultado = ('A pessoa é maior de idade, mas não possui carteira de motorista');
+        }else if(numero < 18 && carteira == "S"){
+            resultado = ('A pessoa é menor de idade e possui carteira de motorista');
+        }else{
+            resultado = ('A pessoa é menor de idade e não possui carteira de motorista');
+        }
+
+        //Exibição do resultado
+        mensagem = document.getElementById("mensagem");
+        mensagem.innerHTML  = (resultado);
+
+    } 
+
+</script>

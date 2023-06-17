@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 3 - Exercício 5</title>
+    <h1> Aula 3 - Exercício 5</h1>
+</head>
+<body>
+<!--  Crie uma função que receba uma string como parâmetro e retorne a mesma string invertida. -->
+    <label for="invert">Informe o valor para inverter: </label>
+    <input type="text" id="invert" name="invert">
+
+    <button onclick="strings()">String invertida.</button>  
+    <br>
+    <br>
+    <div id="mensagem"> </div>
+</body>
+
+</html>
+
+<script>
+
+         
+    // Crie uma função que receba uma string como parâmetro e retorne a mesma string invertida.
+    function strings(){
+       
+        var invert = document.getElementById("invert").value;
+        var resultado = invert.split("").reverse().join("");
+
+        //Exibição do resultado
+        mensagem = document.getElementById("mensagem");
+        mensagem.innerHTML  = (  ' A invers"ao é ' +  resultado);
+
+    } 
+
+</script>

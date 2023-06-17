@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 3 - Exercício 6</title>
+    <h1> Aula 3 - Exercício 6</h1>
+</head>
+<body>
+<!--  Implemente um programa que verifique se uma palavra é um palíndromo. -->
+    <label for="palindromo">A palavra é Palíndromo? </label>
+    <input type="text" id="palindromo" name="palindromo">
+
+    <button onclick="Palindromo()">String invertida.</button>  
+    <br>
+    <br>
+    <div id="mensagem"> </div>
+</body>
+
+</html>
+
+<script>
+
+         
+    // Implemente um programa que verifique se uma palavra é um palíndromo.
+    function Palindromo(){
+       
+        var invert = document.getElementById("palindromo").value;
+        invert = invert.toLowerCase();
+        var reinver = invert.split("").reverse().join("");
+        reinver = reinver.toLowerCase();
+
+        if(invert == reinver){
+            resultado = "É um palindromo";
+        }else{
+            resultado = "Não é um palindromo";
+        }
+
+        //Exibição do resultado
+        mensagem = document.getElementById("mensagem");
+        mensagem.innerHTML  = (   resultado);
+
+    } 
+
+</script>

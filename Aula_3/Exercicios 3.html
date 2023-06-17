@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 3 - Exercício 3</title>
+    <h1> Aula 3 - Exercício 3</h1>
+</head>
+<body>
+<!-- Escreva uma função que retorne o maior valor entre dois números. -->
+    <button onclick="maior()">Qual o maior?</button>  
+    <br>
+    <br>
+    <div id="mensagem"> </div>
+</body>
+
+</html>
+
+<script>
+
+         
+    //Escreva uma função que retorne o maior valor entre dois números.
+    function maior(){
+        
+        var numero = prompt("Digite o numero: ");
+        var numero2 = prompt("Digite o Numero 2: ")
+
+        numero = parseInt(numero);
+        numero2 = parseInt(numero2);
+ 
+        if(numero > numero2){
+            resultado = numero;
+        }else{  
+            resultado = numero2;
+        }
+
+        //Exibição do resultado
+        mensagem = document.getElementById("mensagem");
+        mensagem.innerHTML  = (  'O número maior é ' +  resultado);
+
+    } 
+
+</script>
