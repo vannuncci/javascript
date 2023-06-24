@@ -114,9 +114,9 @@
     }
  
     function limpar(valor) { 
-        delete valor1;
-        delete valor2;
-        delete operador1; 
+        var valor1 = 0;
+        var valor2 = 0;
+        var operador1 = '';  
         document.getElementById('resultado').innerHTML = '';  
     }
  
@@ -131,9 +131,18 @@
     }
 
     function resultado() {
-        valor2 = document.getElementById('resultado').innerHTML; 
-        var resultado = eval(valor1 + operador1 + valor2);
-        document.getElementById('resultado').innerHTML = resultado;
+        if (  operador1 == '') { 
+            document.getElementById('resultado').innerHTML = '';
+        } else {
+            valor2 = document.getElementById('resultado').innerHTML; 
+            // corrigir erro de divisão por zero
+            if (operador1 == '/' && valor2 == 0) { 
+                document.getElementById('resultado').innerHTML = 0; 
+            } else {
+                var resultado = eval(valor1 + operador1 + valor2);
+                document.getElementById('resultado').innerHTML = resultado;
+            }
+        }
     }
 
 
