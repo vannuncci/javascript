@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para a área da lista de tarefas */
+  #taskList {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+    max-width: 70%;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  /* Estilos para cada tarefa */
+  .task {
+    margin-bottom: 8px;
+    padding: 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .done {
+    text-decoration: line-through;
+    background-color: #d3ffd3;
+  }
+  
+  /* Estilos para os botões */
+  button {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #4CAF50;
+    color: #fff;
+    margin-left: 5px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  #clearCompleted {
+    background-color: #ff9999;
+  }
+  
+  #clearCompleted:hover {
+    background-color: #ff6666;
+  }
+  
+  /* Estilo para o campo de texto de nova tarefa */
+  input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 60%;
+  }
+  
+  /* Estilo para o botão "Adicionar" */
+  #addTask {
+    background-color: #2196F3;
+  }
+  
+  #addTask:hover {
+    background-color: #1f88e5;
+  }

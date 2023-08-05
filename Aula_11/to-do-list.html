@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>To-Do List</title>
+    <!-- Link para o jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>To-Do List</h1>
+
+    <div id="taskList">
+        <!-- Aqui serão adicionadas as tarefas -->
+    </div>
+    <br>        
+
+    <input type="text" id="newTask" placeholder="Digite uma nova tarefa">
+    <button id="addTask">Adicionar</button>
+    <button id="clearCompleted">Limpar concluídas</button>
+</body>
+    <script>
+        // adicionar função para incluir a lista de tarefas
+    $('#addTask').click(() => {
+        let newTask = $('#newTask').val()
+        if (newTask == '') {
+            alert('Informe uma tarefa.')
+            return
+        } else {
+            // criar elemento html para a tarefa usando jquery
+            let task = $('<div class="task"></div>')
+            let taskText = $('<span></span>').text(newTask)
+            let taskButtons = $('<div class="taskButtons"></div>')
+            let completeButton = $('<button class="complete">Concluir</button>')
+            let deleteButton = $('<button class="delete">Excluir</button>')
+            // adicionar o texto da tarefa na div task
+            task.append(taskText)
+            // adicionar os botões na div taskButtons
+            taskButtons.append(completeButton)
+            taskButtons.append(deleteButton)
+            // adicionar a div taskButtons na div task
+            task.append(taskButtons)
+            // adicionar a div task na div taskList
+            $('#taskList').append(task)
+            // limpar o campo de texto
+            $('#newTask').val('')
+        }
+    })
+    // adicionar função para concluir tarefa
+    $('#taskList').on('click', '.complete', function() {
+        $(this).parent().parent().toggleClass('done')
+    })
+    // adicionar função para excluir tarefa
+    $('#taskList').on('click', '.delete', function() {
+        $(this).parent().parent().remove()
+    })
+    // adicionar função para limpar tarefas concluídas
+    $('#clearCompleted').click(() => {
+        $('.done').remove()
+    })
+
+    </script>
+
+</html>
